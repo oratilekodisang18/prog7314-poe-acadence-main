@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "907171020913",
+    "project_id": "acadence-40662",
+    "storage_bucket": "acadence-40662.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907171020913:android:6c2c3020ded78a9128dbd0",
+        "android_client_info": {
+          "package_name": "com.example.acadenceapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907171020913-rjk2otrlfsv7v2ebocpvvusut38i2633.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.acadenceapp",
+            "certificate_hash": "9f48da99a013fa8499d3bde68f0cbc607328280a"
+          }
+        },
+        {
+          "client_id": "907171020913-s3ejcf6drbnb0nnqd0g6jdtnva870t0c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGE-FgCIUkcXnhyZ8TzTEGJC9iftpmfPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907171020913-s3ejcf6drbnb0nnqd0g6jdtnva870t0c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

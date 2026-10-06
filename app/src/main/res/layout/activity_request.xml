@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Top bar (pinned) -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="#0066FF"
+        android:gravity="center"
+        android:text="Request Review"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Scrollable content lives here -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollContent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/titleText"
+        app:layout_constraintBottom_toTopOf="@id/navbar_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Select Document -->
+            <TextView
+                android:id="@+id/labelDoc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Document"
+                android:textStyle="bold"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp" />
+
+            <Spinner
+                android:id="@+id/documentSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/rounded_edittext" />
+
+            <!-- Assign to -->
+            <TextView
+                android:id="@+id/labelTeacher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Assign to (Consultant/Teacher)"
+                android:textStyle="bold"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp" />
+
+            <Spinner
+                android:id="@+id/teacherSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/rounded_edittext" />
+
+            <!-- Labels for the three pickers -->
+            <LinearLayout
+                android:id="@+id/pickLabels"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Review Type"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Priority"
+                    android:textStyle="bold"
+                    android:gravity="center_horizontal"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Visibility"
+                    android:textStyle="bold"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <!-- Three pickers -->
+            <LinearLayout
+                android:id="@+id/pickRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="6dp">
+
+                <Spinner
+                    android:id="@+id/reviewTypeSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_edittext" />
+
+                <Space android:layout_width="8dp" android:layout_height="0dp" />
+
+                <Spinner
+                    android:id="@+id/urgencySpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_edittext" />
+
+                <Space android:layout_width="8dp" android:layout_height="0dp" />
+
+                <Spinner
+                    android:id="@+id/visibilitySpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_edittext" />
+            </LinearLayout>
+
+            <!-- Notes -->
+            <EditText
+                android:id="@+id/reviewDetails"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/rounded_edittext"
+                android:gravity="top|start"
+                android:hint="Add any notes or instructions for your reviewer…"
+                android:inputType="textMultiLine"
+                android:padding="12dp" />
+
+            <!-- Due Date Picker -->
+            <TextView
+                android:id="@+id/dueDateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="Select Due Date"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/pickDueDateButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="6dp"
+                android:text="Pick Due Date"
+                android:background="@drawable/rounded_edittext" />
+
+            <TextView
+                android:id="@+id/selectedDueDateText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:text="No date selected"
+                android:textColor="#555555" />
+
+            <!-- Price Preview -->
+            <TextView
+                android:id="@+id/priceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Estimated Price"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/calculatedPriceText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:text="R0.00"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#000000" />
+
+
+            <!-- Submit -->
+            <Button
+                android:id="@+id/submitRequestButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_margin="16dp"
+                android:text="Submit Request"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#0066FF" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"
+                android:visibility="gone"/>
+
+            <!-- Your Uploaded Files -->
+            <TextView
+                android:id="@+id/labelUploads"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Uploaded Files"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/uploadsRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:padding="12dp"
+                android:nestedScrollingEnabled="false"/>
+
+            <!-- Your Review Requests -->
+            <TextView
+                android:id="@+id/labelRequests"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Review Requests"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/requestsRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:nestedScrollingEnabled="false"/>
+
+            <!-- Spacer so last card isn't obscured by navbar -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="72dp"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom navbar (pinned) -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/navbar_container"
+        android:name="com.example.acadenceapp.NavbarFragment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

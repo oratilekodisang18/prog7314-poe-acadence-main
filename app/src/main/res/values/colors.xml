@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#1E88E5</color>         <!-- used in your profile header in examples -->
+    <color name="blue_primary">#0066FF</color>  <!-- used in dashboard examples -->
+    <color name="gray_light">#EDEDED</color>
+    <color name="gray_medium">#BDBDBD</color>
+    <color name="chip_ripple">#330066FF</color>
+    <color name="gray">#CCCCCC</color>
+    <color name="dark_gray">#888888</color>
+    <color name="red">#FF4C4C</color>
+    <color name="light_yellow">#FFF8DC</color>
+    <color name="orange">#FF9800</color>
+    <color name="green">#4CAF50</color>
+    <color name="purple">#4E006DE6</color>
+
+</resources>
